@@ -4,13 +4,13 @@ import classes from './Search.module.css'
 
 const Seacrh = ({setActive}) => {
     return (
-      <div className="place">
+      <div className={classes.place}>
         <div className = {classes.form} >
           <input
         className={classes.search}
         placeholder = 'Поиск'
         />
-          <Button active = {setActive}/>
+          <Button onClick ={() => setActive(true)} >Add</Button>
         </div>
       </div>
     )

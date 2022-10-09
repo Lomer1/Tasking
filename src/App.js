@@ -9,22 +9,31 @@ import "./styles/style.css";
 
 function App() {
 
-  const [task, setTask] = useState([
-    {id: 1, title: 'Вуз', body: 'Заявление'},
-    {id: 2, title: 'Lov', body: 'Gop'}
+  const [task, setTask] = useState([                    //posts
+    {id: 1, title: 'Санек', body: 'Староста 61 комнаты СД№8'},
+    {id: 2, title: 'Витек', body: 'Render'}
   ])
 
-  const [modelActive, setModelActive] = useState(false)
+  const createTask = (newTask) => {
+      setTask([...task, newTask])
+  }
+  const [modelActive, setModelActive] = useState(false)  //modal window
+
+  const removeTask = (tasks) => {
+    setTask(task.filter(p => p.id !== tasks.id))
+  }
 
   console.log(task)
 
   return (
     <div >
       <Seacrh setActive = {setModelActive}/>
-      <hr></hr>
-      {task.map(task => <TaskItem tasks = {task} key = {task.id}/>)}
+      <hr style={{
+          backgroundColor: '#fff',
+          borderColor : '#fff'}}></hr>
+      {task.map(task => <TaskItem remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
       <Model active = {modelActive} setActive = {setModelActive} >
-        <AddTask/>
+        <AddTask createTasks = {createTask} />
       </Model>
     </div>
   );

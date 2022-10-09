@@ -6,8 +6,8 @@
     border: 0px;
     min-width: 30%;
     flex-basis: 5%;
-    margin: 15px 0 10px 15px;
     transition-duration: .2s;
+    font-weight: 600;
 }
 
 .btn:hover {

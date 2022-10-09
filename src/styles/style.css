@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #root{
@@ -10,7 +11,11 @@
     display: flex;
     justify-content: center;
     background-color:hsla(0,100%,50%,1);
-background-image: url(https://avatars.mds.yandex.net/i?id=f36705e307a5238ce2030f10b2fb8218-4615427-images-thumbs&n=13)
+    background-image: url(./back.png);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: 100% auto;
+    background-color: #bbe2e9;
 }
 
 .App {
