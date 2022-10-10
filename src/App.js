@@ -26,7 +26,7 @@ function App() {
   console.log(task)
 
   return (
-    <div >
+    <div className='app' >
       <Seacrh setActive = {setModelActive}/>
       <hr style={{
           backgroundColor: '#fff',
