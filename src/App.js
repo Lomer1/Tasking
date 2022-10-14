@@ -5,7 +5,7 @@ import Button from "./Components/UI/Button";
 import Model from "./Components/UI/Model";
 import Seacrh from "./Components/UI/Seacrh";
 import "./styles/style.css";
-
+import "C:/Programming/ReactF/my-app/node_modules/hamburgers/dist/hamburgers.css";
 
 function App() {
 
