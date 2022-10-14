@@ -4,7 +4,7 @@ import Button from './UI/Button';
 
 const TaskItem = (props) => {
     return (
-        <div className = {classes.task}>
+        <div className = {classes.task} onClick = {() => props.setActive(true)}>
             <div className={classes.conteiner}>
                 <strong className={classes.description} >{props.tasks.title}</strong>
                 <div className={classes.description}>{props.tasks.body}</div>

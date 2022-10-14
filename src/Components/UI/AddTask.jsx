@@ -32,7 +32,7 @@ const AddTask = ({createTasks}) => {
             onChange = {e => setTask({...task, body: e.target.value})}
             placeholder = 'Описание'
           />
-          <button className={classes.btn} style = {{padding: 10}} onClick = {addTask} disabled={!task.title & !task.body}> Добавить задачу</button>
+          <Button  style = {{padding: 10, marginTop: 8}} onClick = {addTask} disabled={!task.title & !task.body}> Добавить задачу</Button>
         </form>
     )
   }
