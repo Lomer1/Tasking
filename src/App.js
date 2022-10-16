@@ -4,8 +4,8 @@ import AddTask from "./Components/UI/AddTask";
 import Button from "./Components/UI/Button";
 import Model from "./Components/UI/Model";
 import Seacrh from "./Components/UI/Seacrh";
+import Sidebar from "./Components/UI/Sidebar";
 import "./styles/style.css";
-import "C:/Programming/ReactF/my-app/node_modules/hamburgers/dist/hamburgers.css";
 
 function App() {
 
@@ -18,6 +18,9 @@ function App() {
       setTask([...task, newTask])
   }
   const [modelActive, setModelActive] = useState(false)  //modal window
+  const [navActive, setNavActive] = useState(false)  //modal navbar
+  
+ 
 
   const removeTask = (tasks) => {
     setTask(task.filter(p => p.id !== tasks.id))
@@ -27,7 +30,8 @@ function App() {
 
   return (
     <div className='app' >
-      <Seacrh setActive = {setModelActive}/>
+      <Seacrh setActive = {setModelActive}></Seacrh>
+      <Sidebar active = {navActive} setActive = {setNavActive} onClick = {() => setNavActive(false)} />
       <hr style={{
           backgroundColor: '#fff',
           borderColor : '#fff'}}></hr>
