@@ -7,7 +7,6 @@ const Seacrh = ({setActive}) => {
     return (
       <div className={classes.place}>
         <div className = {classes.form} >
-          <Sidebar/>
           <input
         className={classes.search}
         placeholder = 'Поиск'

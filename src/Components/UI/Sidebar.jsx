@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import "C:/Programming/ReactF/my-app/node_modules/hamburgers/dist/hamburgers.css";
 
 
-const Sidebar = ({active, setActive, children}) => {
+const Sidebar = ({active, setActive, status, children}) => {
+
+    
 
     return (
         <div>
-            <button className={ active ?"hamburger hamburger--collapse is-active" : "hamburger hamburger--collapse"} type="button" onClick={() => setActive(false)}>
-                <span className="hamburger-box">
+            <button  style = {{position: 'absolute', top:0, left:0}} className={ active ?"hamburger hamburger--collapse is-active" : "hamburger hamburger--collapse"} type="button" onClick = {() => setActive(status)}>
+                <span className="hamburger-box" >
                     <span className="hamburger-inner">{children}</span>
                 </span>
             </button>

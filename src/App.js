@@ -19,23 +19,42 @@ function App() {
   }
   const [modelActive, setModelActive] = useState(false)  //modal window
   const [navActive, setNavActive] = useState(false)  //modal navbar
-  
  
-
   const removeTask = (tasks) => {
     setTask(task.filter(p => p.id !== tasks.id))
   }
 
-  console.log(task)
+  //console.log(task)
+
+  const handleClick = () => {
+    
+   if (navActive===true) {
+        setNavActive(false)
+        console.log(1)
+
+    } else {
+        console.log(2)
+        return setNavActive(true)
+
+    } 
+}
 
   return (
     <div className='app' >
       <Seacrh setActive = {setModelActive}></Seacrh>
-      <Sidebar active = {navActive} setActive = {setNavActive} onClick = {() => setNavActive(false)} />
+      <Sidebar 
+        active = {navActive} 
+        setActive = {setNavActive} 
+        status = {handleClick}>
+      </Sidebar>
+
       <hr style={{
           backgroundColor: '#fff',
-          borderColor : '#fff'}}></hr>
+          borderColor : '#fff'}}>
+      </hr>
+
       {task.map(task => <TaskItem remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
+
       <Model active = {modelActive} setActive = {setModelActive} >
         <AddTask createTasks = {createTask} />
       </Model>
