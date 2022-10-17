@@ -2,6 +2,7 @@ import { useState } from "react";
 import TaskItem from "./Components/TaskItem";
 import AddTask from "./Components/UI/AddTask";
 import Button from "./Components/UI/Button";
+import ModalNavBar from "./Components/UI/ModalNavBar";
 import Model from "./Components/UI/Model";
 import Seacrh from "./Components/UI/Seacrh";
 import Sidebar from "./Components/UI/Sidebar";
@@ -47,7 +48,7 @@ function App() {
         setActive = {setNavActive} 
         status = {handleClick}>
       </Sidebar>
-
+      <ModalNavBar/>
       <hr style={{
           backgroundColor: '#fff',
           borderColor : '#fff'}}>
