@@ -43,12 +43,15 @@ function App() {
   return (
     <div className='app' >
       <Seacrh setActive = {setModelActive}></Seacrh>
-      <Sidebar 
-        active = {navActive} 
-        setActive = {setNavActive} 
-        status = {handleClick}>
-      </Sidebar>
-      <ModalNavBar/>
+
+      <Sidebar  active = {navActive} setActive = {setNavActive} status = {handleClick}/>
+      
+      <ModalNavBar active = {navActive}>        
+        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
+        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
+        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
+      </ModalNavBar>
+
       <hr style={{
           backgroundColor: '#fff',
           borderColor : '#fff'}}>

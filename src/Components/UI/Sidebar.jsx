@@ -8,7 +8,11 @@ const Sidebar = ({active, setActive, status, children}) => {
 
     return (
         <div>
-            <button  style = {{position: 'absolute', top:0, left:0}} className={ active ?"hamburger hamburger--collapse is-active" : "hamburger hamburger--collapse"} type="button" onClick = {() => setActive(status)}>
+            <button  style = {{position: 'absolute', top:0, left:0, zIndex: 20}}
+                     className={ active ?"hamburger hamburger--collapse is-active" : "hamburger hamburger--collapse"} 
+                     type="button" 
+                     onClick = {() => setActive(status)}>
+                        
                 <span className="hamburger-box" >
                     <span className="hamburger-inner">{children}</span>
                 </span>

@@ -1,15 +1,15 @@
 import React from 'react'
 import './ModalNavBar.css'
 
-const ModalNavBar = ({children}) => {
+const ModalNavBar = ({active ,children}) => {
 
     
     
     return (
-        <div className={"modal"}>
+        <div className={active ? "modal active" : "modal"}>
             <div className="modal__conteiner">
-                <div className={"modal_content"} onClick = {e => e.stopPropagation()} >
-                    {children} ffffffffffff
+                <div className={active ? "modal_content active" : "modal_content"} onClick = {e => e.stopPropagation()} >
+                    {children} 
                 </div> 
             </div>
         </div>
