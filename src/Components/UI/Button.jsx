@@ -1,5 +1,4 @@
 import React from 'react'
-import AddTask from './AddTask';
 import classes from './Button.module.css'
 
 const Button = ({children, ...props}) => {

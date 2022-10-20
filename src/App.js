@@ -2,11 +2,12 @@ import { useState } from "react";
 import TaskItem from "./Components/TaskItem";
 import AddTask from "./Components/UI/AddTask";
 import Button from "./Components/UI/Button";
-import ModalNavBar from "./Components/UI/ModalNavBar";
-import Model from "./Components/UI/Model";
+import ModalNavBar from "./Components/ModalWindow/ModalNavBar";
+import Model from "./Components/ModalWindow/Model";
 import Seacrh from "./Components/UI/Seacrh";
 import Sidebar from "./Components/UI/Sidebar";
 import "./styles/style.css";
+import ModalTaskItem from "./Components/ModalWindow/ModalTaskItem";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
   }
   const [modelActive, setModelActive] = useState(false)  //modal window
   const [navActive, setNavActive] = useState(false)  //modal navbar
+  const [modalTaskActive, setModalTaskActive] = useState(false)
  
   const removeTask = (tasks) => {
     setTask(task.filter(p => p.id !== tasks.id))
@@ -47,9 +49,9 @@ function App() {
       <Sidebar  active = {navActive} setActive = {setNavActive} status = {handleClick}/>
       
       <ModalNavBar active = {navActive}>        
-        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
-        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
-        <Button style =  {{flexBasis: '15%', margin: 10}} >Tasks</Button>
+        <Button style =  {{flexBasis: '10%', margin: 10}} >Tasks</Button>
+        <Button style =  {{flexBasis: '10%', margin: 10}} >Tasks</Button>
+        <Button style =  {{flexBasis: '10%', margin: 10}} >Tasks</Button>
       </ModalNavBar>
 
       <hr style={{
@@ -57,7 +59,10 @@ function App() {
           borderColor : '#fff'}}>
       </hr>
 
-      {task.map(task => <TaskItem remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
+      {task.map(task => <TaskItem setActive = {setModalTaskActive} remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
+      <ModalTaskItem active = {modalTaskActive} setActive = {setModalTaskActive}>
+        <TaskItem/>
+      </ModalTaskItem>
 
       <Model active = {modelActive} setActive = {setModelActive} >
         <AddTask createTasks = {createTask} />
