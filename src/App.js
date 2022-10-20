@@ -61,7 +61,7 @@ function App() {
 
       {task.map(task => <TaskItem setActive = {setModalTaskActive} remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
       <ModalTaskItem active = {modalTaskActive} setActive = {setModalTaskActive}>
-        <TaskItem/>
+        
       </ModalTaskItem>
 
       <Model active = {modelActive} setActive = {setModelActive} >
