@@ -61,11 +61,11 @@ function App() {
 
       {task.map(task => <TaskItem setActive = {setModalTaskActive} remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
       <ModalTaskItem active = {modalTaskActive} setActive = {setModalTaskActive}>
-        
+        <textarea></textarea>
       </ModalTaskItem>
 
       <Model active = {modelActive} setActive = {setModelActive} >
-        <AddTask createTasks = {createTask} />
+        <AddTask createTasks = {createTask}/>
       </Model>
     </div>
   );

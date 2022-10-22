@@ -30,6 +30,7 @@
     border: 0px;
     padding: 10px;
     width: 80%;
+    height: 60%;
     opacity: 0;
     pointer-events: none;
     transition: .4s;

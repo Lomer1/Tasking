@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "C:/Programming/ReactF/my-app/node_modules/hamburgers/dist/hamburgers.css";
+import "/node_modules/hamburgers/dist/hamburgers.css";
 
 
 const Sidebar = ({active, setActive, status, children}) => {

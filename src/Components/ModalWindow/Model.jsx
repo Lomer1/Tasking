@@ -1,5 +1,4 @@
 import React from 'react'
-import AddTask from 'C:/Programming/ReactF/my-app/src/Components/UI/AddTask';
 import classes from './Model.css'
 
 const Model = ({active, setActive, children}) => {
