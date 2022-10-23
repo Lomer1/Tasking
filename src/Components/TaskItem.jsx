@@ -3,9 +3,10 @@ import classes from './task.module.css'
 import Button from './UI/Button';
 
 const TaskItem = (props) => {
+    
     return (
-        <div type = 'button' className = {classes.task} onClick = {() => props.setActive(true)}>
-            <div className={classes.conteiner}>
+        <div className = {classes.task}>
+            <div className={classes.conteiner} onClick = {() => props.setActive(true)}>
                 <strong className={classes.description} >{props.tasks.title}</strong>
                 <div className={classes.description}>{props.tasks.body}</div>
             </div>

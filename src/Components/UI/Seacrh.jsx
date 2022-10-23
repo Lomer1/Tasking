@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from './Button';
 import classes from './Search.module.css'
-import Sidebar from './Sidebar';
 
 const Seacrh = ({setActive}) => {
     return (

@@ -8,6 +8,7 @@ import Seacrh from "./Components/UI/Seacrh";
 import Sidebar from "./Components/UI/Sidebar";
 import "./styles/style.css";
 import ModalTaskItem from "./Components/ModalWindow/ModalTaskItem";
+import RemoveTask from "./Components/UI/RemoveTask";
 
 function App() {
 
@@ -61,7 +62,7 @@ function App() {
 
       {task.map(task => <TaskItem setActive = {setModalTaskActive} remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
       <ModalTaskItem active = {modalTaskActive} setActive = {setModalTaskActive}>
-        <textarea></textarea>
+        <RemoveTask task = {task} setTask = {setTask}/>
       </ModalTaskItem>
 
       <Model active = {modelActive} setActive = {setModelActive} >
