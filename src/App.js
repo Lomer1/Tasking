@@ -1,3 +1,7 @@
+/* этот проект я начал разрабатывать самостоятельно еще до того, как увидел вакансию
+   здесь нет файлов typescript, но я уверен, что легко с ними разберусь и изучу все, что потребуется для работы (ведь это масштабируемый JS:) )
+   поэтому хдесь все написано на js и использован node module для создания sidebar 
+   я не совсем понял, что подразумевается под тестами, все что я сделал из тестов это проверки и вывод в консоль*/
 import { useState } from "react";
 import TaskItem from "./Components/TaskItem";
 import AddTask from "./Components/UI/AddTask";
@@ -7,15 +11,15 @@ import Model from "./Components/ModalWindow/Model";
 import Seacrh from "./Components/UI/Seacrh";
 import Sidebar from "./Components/UI/Sidebar";
 import "./styles/style.css";
-import ModalTaskItem from "./Components/ModalWindow/ModalTaskItem";
-import RemoveTask from "./Components/UI/RemoveTask";
+
 
 function App() {
 
-  const [task, setTask] = useState([                    //posts
-    {id: 1, title: 'Санек', body: 'Староста 61 комнаты СД№8'},
-    {id: 2, title: 'Витек', body: 'Render'}
+  const [task, setTask] = useState([                    //tasks
+    {id: 1, title: 'Санек', body: 'Староста 61 комнаты СД№8', status: true},
+    {id: 2, title: 'Витек', body: 'Render', status: false}
   ])
+
 
   const createTask = (newTask) => {
       setTask([...task, newTask])
@@ -43,6 +47,8 @@ function App() {
     } 
 }
 
+
+
   return (
     <div className='app' >
       <Seacrh setActive = {setModelActive}></Seacrh>
@@ -59,12 +65,9 @@ function App() {
           backgroundColor: '#fff',
           borderColor : '#fff'}}>
       </hr>
-
+      
       {task.map(task => <TaskItem setActive = {setModalTaskActive} remove = {removeTask} tasks = {task} setTasks = {setTask} key = {task.id}/>)}
-      <ModalTaskItem active = {modalTaskActive} setActive = {setModalTaskActive}>
-        <RemoveTask task = {task} setTask = {setTask}/>
-      </ModalTaskItem>
-
+      
       <Model active = {modelActive} setActive = {setModelActive} >
         <AddTask createTasks = {createTask}/>
       </Model>
